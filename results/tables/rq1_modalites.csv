@@ -1,0 +1,5 @@
+modalite,n_variables,auc_moyenne,ecart_type
+MULTIMODAL,8,0.865,0.059
+Cognitif,1,0.828,0.066
+Imagerie (IRM),3,0.663,0.093
+Clinique,4,0.658,0.073
