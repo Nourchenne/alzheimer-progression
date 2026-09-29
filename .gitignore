@@ -1,0 +1,39 @@
+# ===== Données : JAMAIS dans Git (volume + licence ADNI/OASIS) =====
+data/raw/**
+data/interim/**
+data/processed/**
+!data/**/.gitkeep
+!data/**/
+*.csv
+*.parquet
+*.nii
+*.nii.gz
+*.dcm
+
+# ===== Modèles entraînés (fichiers lourds) =====
+models/*
+!models/.gitkeep
+*.pt
+*.pth
+*.pkl
+*.joblib
+
+# ===== Résultats volumineux =====
+results/logs/*
+!results/logs/.gitkeep
+
+# ===== Python =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+
+# ===== Notebooks =====
+.ipynb_checkpoints/
+
+# ===== Système / éditeurs =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

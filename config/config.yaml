@@ -1,0 +1,39 @@
+# ============================================================
+#  Configuration centrale du projet
+#  -> Toutes les décisions (chemins, variables, cible) sont ici.
+#  -> Le code lit ce fichier : on ne met JAMAIS de chemin "en dur".
+# ============================================================
+
+project:
+  name: alzheimer-progression
+  seed: 42                      # graine aléatoire -> résultats reproductibles
+
+paths:                          # relatifs à la racine du projet
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  models: models
+  results: results
+
+data:
+  oasis_longitudinal: oasis/oasis_longitudinal.csv
+
+target:
+  source_column: Group
+  column: target
+  mapping:                      # 0 = stable, 1 = progresse / atteint
+    Nondemented: 0
+    Demented: 1
+    Converted: 1
+
+features:
+  id: Subject ID
+  time: [Visit, MR Delay]
+  imaging: [eTIV, nWBV, ASF]    # IRM (caractéristiques extraites)
+  cognitive: [MMSE]
+  clinical: [M/F, Age, EDUC, SES]
+  excluded: [Hand, MRI ID, Group, CDR]   # CDR = fuite de données (encode la cible)
+
+split:
+  test_size: 0.2
+  cv_folds: 5

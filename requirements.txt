@@ -1,0 +1,17 @@
+# --- Données ---
+numpy
+pandas
+pyyaml
+# --- Modèles classiques ---
+scikit-learn
+# --- Visualisation ---
+matplotlib
+seaborn
+# --- Notebooks ---
+jupyter
+# --- Big Data (lourd : utilisé surtout sur Kaggle) ---
+pyspark
+# --- Deep Learning (lourd : entraînement sur Kaggle GPU) ---
+torch
+# --- Explicabilité ---
+shap
