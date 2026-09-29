@@ -12,6 +12,8 @@ from sklearn.preprocessing import StandardScaler
 from src.config import load_config
 from src.data.split import patient_cv
 
+from src.data.clean import feature_columns
+
 
 def build_model(seed: int):
     """Pipeline standard : imputation médiane -> standardisation -> régression logistique."""
@@ -55,3 +57,29 @@ def compare_modalities(df: pd.DataFrame, cfg: dict | None = None) -> pd.DataFram
             "ecart_type": round(scores.std(), 3),
         })
     return pd.DataFrame(lignes)
+
+
+# ---------------------------------------------------------------------------
+# RQ2 — référence "statique" : une seule visite (la première) par patient
+# ---------------------------------------------------------------------------
+def first_visit_only(df, cfg):
+    """Garde uniquement la 1re visite de chaque patient (analyse statique)."""
+    id_col = cfg["features"]["id"]
+    visit_col = cfg["features"]["time"][0]
+    return (df.sort_values(visit_col)
+              .groupby(id_col, as_index=False)
+              .head(1)
+              .reset_index(drop=True))
+
+
+def evaluate_static(df, cfg=None):
+    """AUC du modele statique (1re visite, multimodal) en CV par patient."""
+    cfg = cfg or load_config()
+    base = first_visit_only(df, cfg)
+    X = base[feature_columns(cfg)]
+    y = base[cfg["target"]["column"]]
+    groups = base[cfg["features"]["id"]]
+    return cross_val_score(
+        build_model(cfg["project"]["seed"]),
+        X, y, cv=patient_cv(cfg), groups=groups, scoring="roc_auc",
+    )
