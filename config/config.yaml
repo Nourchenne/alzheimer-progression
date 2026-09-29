@@ -37,3 +37,11 @@ features:
 split:
   test_size: 0.2
   cv_folds: 5
+
+
+cleaning:
+  sex_column: M/F
+  sex_mapping: {M: 1, F: 0}
+
+processed:
+  oasis_clean: oasis_clean.parquet
