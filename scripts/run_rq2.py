@@ -27,8 +27,17 @@ def main():
     print("\nRQ2 — statique vs longitudinal (AUC, CV par patient) :\n")
     print(res.to_string(index=False))
 
+    # --- Verdict qui tient compte de l'incertitude ---
+    # Le gain n'est retenu que s'il dépasse le bruit (variabilite entre plis).
     gain = longi.mean() - stat.mean()
-    print(f"\nGain du longitudinal : {gain:+.3f}  ->  RQ2 confirmee ? {'OUI' if gain > 0 else 'NON'}")
+    seuil = max(stat.std(), longi.std())
+    if gain > seuil:
+        verdict = "OUI, gain significatif"
+    elif gain > 0:
+        verdict = "Match nul (gain dans le bruit)"
+    else:
+        verdict = "NON"
+    print(f"\nGain du longitudinal : {gain:+.3f} (bruit +/-{seuil:.3f})  ->  RQ2 : {verdict}")
 
     out = get_path("results", cfg) / "tables" / "rq2_statique_vs_longitudinal.csv"
     res.to_csv(out, index=False)
