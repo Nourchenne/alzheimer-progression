@@ -1,0 +1,3 @@
+modele,auc_moyenne,ecart_type
+Statique (1re visite),0.852,0.079
+Longitudinal (LSTM),0.855,0.067

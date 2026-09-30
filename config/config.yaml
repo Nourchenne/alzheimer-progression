@@ -45,3 +45,11 @@ cleaning:
 
 processed:
   oasis_clean: oasis_clean.parquet
+
+
+longitudinal:
+  hidden: 16
+  dropout: 0.3
+  epochs: 60
+  lr: 0.01
+  weight_decay: 0.0001
