@@ -27,3 +27,18 @@ tables:                     # nom logique -> fichier (relatif à paths.raw)
   apoe:    adnimerge2/APOERES.csv                         # génétique (1 ligne / patient)
 
 per_patient_tables: [apoe]  # pas de code de visite : jointure sur RID seulement
+
+
+cohort:                     # définition de la cible (Tâche 3)
+  diagnosis_column: PHC_Diagnosis
+  date_column: EXAMDATE
+  phase_column: PHASE       # phase ADNI de la visite (à la baseline = phase d'inclusion)
+  baseline_dx: 2            # MCI au départ
+  converted_dx: 3           # démence de type Alzheimer
+  excluded_dx: [4, 5]       # démence non-Alzheimer / autre diagnostic
+  excluded_visits: [f]      # échecs de screening (non inclus dans l'étude)
+  horizon_months: 36        # fenêtre de prédiction
+  tolerance_months: 3       # une visite "m36" a lieu entre ~33 et ~39 mois
+
+processed:
+  cohort: cohort_mci36.parquet
