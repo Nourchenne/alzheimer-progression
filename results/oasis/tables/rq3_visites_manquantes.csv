@@ -1,0 +1,5 @@
+scenario,auc_moyenne,ecart_type
+1 visite(s) max,0.837,0.062
+2 visite(s) max,0.853,0.062
+3 visite(s) max,0.852,0.067
+Toutes les visites,0.855,0.067

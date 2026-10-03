@@ -13,7 +13,7 @@ paths:                          # relatifs à la racine du projet
   interim: data/interim
   processed: data/processed
   models: models
-  results: results
+  results: results/oasis
 
 data:
   oasis_longitudinal: oasis/oasis_longitudinal.csv
