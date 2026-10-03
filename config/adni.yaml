@@ -50,7 +50,8 @@ baseline:                   # table multimodale à la baseline (Tâche 4)
     cognitif:
       table: cogn
       date: EXAMDATE
-      features: [PHC_MEM, PHC_EXF, PHC_LAN, PHC_VSP]
+      features: [PHC_MEM]   # EXF, LAN, VSP écartés : estimation fiable pour < 12 % des patients
+      precision_filter: true  # score imprécis (PreciseFilter = 0) -> valeur manquante
     mmse:
       table: mmse
       date: VISDATE

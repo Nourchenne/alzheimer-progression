@@ -1,0 +1,13 @@
+modalite,fenetre_mois,patients_eligibles,convertis_eligibles,mesures_mediane,patients_>=2_mesures_%
+cognitif,12,637,227,3.0,99.8
+cognitif,24,529,119,4.0,100.0
+mmse,12,637,227,2.0,81.6
+mmse,24,529,119,3.0,95.1
+irm,12,637,227,2.0,74.6
+irm,24,529,119,3.0,90.2
+pet_amyloide,12,637,227,1.0,0.2
+pet_amyloide,24,529,119,1.0,3.4
+pet_fdg,12,637,227,1.0,18.5
+pet_fdg,24,529,119,1.0,18.0
+lcr,12,637,227,1.0,0.0
+lcr,24,529,119,1.0,13.4

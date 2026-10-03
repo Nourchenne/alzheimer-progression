@@ -33,6 +33,13 @@ def _prepare(name: str, df: pd.DataFrame, spec: dict) -> tuple[pd.DataFrame, lis
     if name == "pet_fdg":
         out = df[df["ROINAME"] == "MetaROI"].rename(columns={"MEAN": "fdg_metaroi"})
         return out, ["fdg_metaroi"]
+    if spec.get("precision_filter"):
+        # scores composites : une estimation imprécise (PreciseFilter = 0) n'est pas
+        # une vraie mesure, c'est une valeur par défaut -> on la remplace par NaN
+        out = df.copy()
+        for f in spec["features"]:
+            out.loc[out[f"{f}_PreciseFilter"] != 1, f] = pd.NA
+        return out, list(spec["features"])
     return df, list(spec["features"])
 
 
