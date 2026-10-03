@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from src.config import load_config
-from src.data.clean import feature_columns
+from src.oasis.data.clean import feature_columns
 
 
 def build_sequences(df: pd.DataFrame, cfg: dict | None = None):

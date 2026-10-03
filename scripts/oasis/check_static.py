@@ -1,10 +1,10 @@
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import pandas as pd
 from src.config import load_config, get_path
-from src.models.baselines import evaluate_static, first_visit_only
+from src.oasis.models.baselines import evaluate_static, first_visit_only
 
 cfg = load_config()
 df = pd.read_parquet(get_path("processed", cfg) / cfg["processed"]["oasis_clean"])

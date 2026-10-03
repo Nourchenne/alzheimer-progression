@@ -1,8 +1,3 @@
-# ============================================================
-#  Configuration centrale du projet
-#  -> Toutes les décisions (chemins, variables, cible) sont ici.
-#  -> Le code lit ce fichier : on ne met JAMAIS de chemin "en dur".
-# ============================================================
 
 project:
   name: alzheimer-progression

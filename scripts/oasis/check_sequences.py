@@ -4,12 +4,12 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import pandas as pd
 
 from src.config import load_config, get_path
-from src.features.sequences import build_sequences, sequence_summary
+from src.oasis.features.sequences import build_sequences, sequence_summary
 
 
 def main() -> None:

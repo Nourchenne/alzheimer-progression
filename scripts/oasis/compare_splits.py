@@ -3,7 +3,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import pandas as pd
 from sklearn.impute import SimpleImputer
@@ -13,8 +13,8 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from src.config import load_config, get_path
-from src.data.clean import feature_columns
-from src.data.split import split_by_patient, patient_cv
+from src.oasis.data.clean import feature_columns
+from src.oasis.data.split import split_by_patient, patient_cv
 
 
 def make_model(seed: int):

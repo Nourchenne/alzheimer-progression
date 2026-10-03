@@ -10,8 +10,8 @@ from torch.nn.utils.rnn import pad_sequence, pack_padded_sequence
 from sklearn.metrics import roc_auc_score
 
 from src.config import load_config
-from src.data.split import patient_cv
-from src.features.sequences import build_sequences
+from src.oasis.data.split import patient_cv
+from src.oasis.features.sequences import build_sequences
 
 
 def set_seed(seed):

@@ -6,10 +6,10 @@ import torch.nn as nn
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import cross_val_score
 from src.config import load_config
-from src.data.split import patient_cv
-from src.models.baselines import build_model, first_visit_only
-from src.features.sequences import build_sequences
-from src.models.longitudinal import (
+from src.oasis.data.split import patient_cv
+from src.oasis.models.baselines import build_model, first_visit_only
+from src.oasis.features.sequences import build_sequences
+from src.oasis.models.longitudinal import (
     set_seed, fit_stats, apply_stats, to_padded_batch, LSTMClassifier,
 )
 

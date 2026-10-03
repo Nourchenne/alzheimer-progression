@@ -2,12 +2,12 @@
 """
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import pandas as pd
 from src.config import load_config, get_path
-from src.models.baselines import evaluate_static
-from src.models.longitudinal import evaluate_longitudinal
+from src.oasis.models.baselines import evaluate_static
+from src.oasis.models.longitudinal import evaluate_longitudinal
 
 
 def main():

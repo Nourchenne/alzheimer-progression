@@ -1,0 +1,29 @@
+
+project:
+  name: alzheimer-progression-adni
+  seed: 42
+
+paths:                      # relatifs à la racine du projet
+  raw: data/raw/adni
+  interim: data/interim/adni
+  processed: data/processed/adni
+  models: models/adni
+  results: results/adni
+
+keys:
+  id: RID                   # identifiant patient
+  visit: VISCODE2           # code de visite harmonisé
+
+tables:                     # nom logique -> fichier (relatif à paths.raw)
+  demodx:  phc/ADSP_PHC_DEMODX_03Oct2026.csv              # clinique + diagnostic
+  cogn:    phc/ADSP_PHC_COGN_03Oct2026.csv                # cognitif (scores composites)
+  mri:     phc/ADSP_PHC_T1_FS_03Oct2026.csv               # IRM FreeSurfer
+  amyloid: phc/ADSP_PHC_PET_Amyloid_Simple_03Oct2026.csv  # PET amyloïde
+  tau:     phc/ADSP_PHC_PET_Tau_Simple_03Oct2026.csv      # PET tau
+  csf:     phc/ADSP_PHC_CSF_03Oct2026.csv                 # biomarqueurs LCR
+  plasma:  phc/ADSP_PHC_PLASMA_03Oct2026.csv              # biomarqueurs plasma
+  mmse:    adnimerge2/MMSE.csv                            # test MMSE
+  fdg:     adnimerge2/UCBERKELEYFDG_8mm.csv               # PET FDG (format long)
+  apoe:    adnimerge2/APOERES.csv                         # génétique (1 ligne / patient)
+
+per_patient_tables: [apoe]  # pas de code de visite : jointure sur RID seulement

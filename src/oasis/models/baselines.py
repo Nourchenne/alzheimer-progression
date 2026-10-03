@@ -10,9 +10,9 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 from src.config import load_config
-from src.data.split import patient_cv
+from src.oasis.data.split import patient_cv
 
-from src.data.clean import feature_columns
+from src.oasis.data.clean import feature_columns
 
 
 def build_model(seed: int):

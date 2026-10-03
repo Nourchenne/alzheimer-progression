@@ -1,11 +1,11 @@
-"""RQ3 : robustesse aux visites manquantes. Lancement : python scripts/run_rq3_visits.py"""
+"""RQ3 : robustesse aux visites manquantes. Lancement : python scripts/oasis/run_rq3_visits.py"""
 import sys
 from pathlib import Path
-sys.path.append(str(Path(__file__).resolve().parents[1]))
+sys.path.append(str(Path(__file__).resolve().parents[2]))
 
 import pandas as pd
 from src.config import load_config, get_path
-from src.evaluation.robustness import robustness_to_missing_visits
+from src.oasis.evaluation.robustness import robustness_to_missing_visits
 
 def main():
     cfg = load_config()

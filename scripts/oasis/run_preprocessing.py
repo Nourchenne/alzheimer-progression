@@ -1,11 +1,11 @@
 import sys
 from pathlib import Path
 
-sys.path.append(str(Path(__file__).resolve().parents[1]))  # pour pouvoir importer src
+sys.path.append(str(Path(__file__).resolve().parents[2]))  # pour pouvoir importer src
 
 from src.config import load_config, get_path
-from src.data.load import load_oasis_longitudinal
-from src.data.clean import clean_oasis
+from src.oasis.data.load import load_oasis_longitudinal
+from src.oasis.data.clean import clean_oasis
 
 
 def main() -> None:
