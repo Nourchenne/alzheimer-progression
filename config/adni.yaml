@@ -75,3 +75,10 @@ baseline:                   # table multimodale à la baseline (Tâche 4)
     # plasma : écarté (14 % de couverture, concentré sur ADNI3) -> voir rapport
 
 processed_baseline: baseline_multimodal.parquet
+
+
+evaluation:                 # protocole d'évaluation (Tâche 5)
+  cv_folds: 5
+  cv_repeats: 5             # 5 x 5 = 25 découpages -> estimation plus stable
+  merge_modalities:         # modalités regroupées pour l'analyse
+    cognitif: [cognitif, mmse]

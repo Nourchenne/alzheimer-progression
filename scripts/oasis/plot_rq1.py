@@ -27,8 +27,8 @@ def main() -> None:
             xerr=res["ecart_type"], color=couleurs, capsize=4)
 
     # écrire la valeur au bout de chaque barre
-    for y, v in enumerate(res["auc_moyenne"]):
-        ax.text(v + 0.012, y, f"{v:.3f}", va="center", fontsize=10)
+    for y, (v, e) in enumerate(zip(res["auc_moyenne"], res["ecart_type"])):
+        ax.text(v + e + 0.015, y, f"{v:.3f}", va="center", fontsize=10)
 
     ax.axvline(0.5, color="grey", linestyle="--", linewidth=1)  # 0.5 = hasard
     ax.set_xlabel("AUC (validation croisée par patient)")

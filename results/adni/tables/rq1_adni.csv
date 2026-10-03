@@ -1,0 +1,15 @@
+modele,modalite,n_variables,auc_moyenne,ecart_type
+Régression logistique,clinique,4,0.709,0.087
+Régression logistique,irm,7,0.8,0.073
+Régression logistique,pet_amyloide,1,0.856,0.064
+Régression logistique,pet_fdg,1,0.804,0.08
+Régression logistique,lcr,3,0.871,0.055
+Régression logistique,cognitif,2,0.83,0.039
+Régression logistique,MULTIMODAL,18,0.932,0.039
+Forêt aléatoire,clinique,4,0.708,0.095
+Forêt aléatoire,irm,7,0.794,0.069
+Forêt aléatoire,pet_amyloide,1,0.863,0.058
+Forêt aléatoire,pet_fdg,1,0.767,0.089
+Forêt aléatoire,lcr,3,0.843,0.064
+Forêt aléatoire,cognitif,2,0.797,0.061
+Forêt aléatoire,MULTIMODAL,18,0.939,0.032
