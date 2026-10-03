@@ -1,0 +1,5 @@
+scenario,auc_moyenne,ecart_type,chute_vs_complet
+Complet (aucune absente),0.799,0.049,0.0
+sans Imagerie,0.807,0.063,0.008
+sans Cognitif,0.684,0.081,-0.115
+sans Clinique,0.772,0.026,-0.027
