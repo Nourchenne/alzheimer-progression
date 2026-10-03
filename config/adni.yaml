@@ -42,3 +42,35 @@ cohort:                     # définition de la cible (Tâche 3)
 
 processed:
   cohort: cohort_mci36.parquet
+
+
+baseline:                   # table multimodale à la baseline (Tâche 4)
+  window_days: [-180, 90]   # mesure retenue : de 6 mois avant à 3 mois après la baseline
+  modalities:
+    cognitif:
+      table: cogn
+      date: EXAMDATE
+      features: [PHC_MEM, PHC_EXF, PHC_LAN, PHC_VSP]
+    mmse:
+      table: mmse
+      date: VISDATE
+      features: [MMSCORE]
+    irm:
+      table: mri
+      date: PHC_SCANDATE
+      features: []          # variables calculées dans le code (volumes / volume intracrânien)
+    pet_amyloide:
+      table: amyloid
+      date: PHC_SCANDATE
+      features: [PHC_CENTILOIDS]
+    pet_fdg:
+      table: fdg
+      date: EXAMDATE
+      features: [MEAN]      # région MetaROI (résumé standard ADNI)
+    lcr:
+      table: csf
+      date: DRAWDATE
+      features: [PHC_AB42, PHC_Tau, PHC_pTau181]
+    # plasma : écarté (14 % de couverture, concentré sur ADNI3) -> voir rapport
+
+processed_baseline: baseline_multimodal.parquet
